@@ -1,0 +1,213 @@
+.nav_div{
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+.nav_div button{
+    margin-left: 30px;
+    font-size: 12px;
+    
+}
+.nav_div .booking{
+    height: 40px;
+    border-radius: 10px;
+}
+.nav_div .booking .mat-icon{
+    margin-left: 20px;
+    font-size: 20px;
+}
+.navbar{
+    overflow: hidden;
+}
+.bell_icon{
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mat-icon{
+  font-size: 25px;
+}
+.right_vertical{
+  border-left: 1px solid #bbb7b2;
+  position: absolute;
+  top:0px;
+  height: 100%;
+  margin-left: 4rem;
+  z-index: -1;
+}
+
+.container-fluid{
+    padding: 0px 20px 0px 5rem;
+}
+
+.tab_box{
+    border: 0.1px solid #f3f3f2;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 10px;
+    border-top: #FFF;
+    height: 630px;
+    border-top: none;
+    border-top-left-radius: 0px;
+    z-index: -1;
+}
+.tab_inner_box{
+    margin: 0px 10px 0px 10px ;
+}
+
+
+.main_tab {
+    text-align: center;
+    list-style: none;
+    line-height: 40px;
+    height: 40px;
+    overflow: hidden;
+    width: 200px;
+    font-size: 13px;
+    position: relative;
+    display: inline-block;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 25px;
+    box-shadow: 0 0px 5px 0px rgba(155, 152, 152, 0.2);
+    border-bottom: #FFF;
+    margin-top: 5px;
+    z-index: 3;
+  }
+  
+  .main_tab li {
+    background: #FFF;
+    text-shadow: 0 1px #FFF;
+    margin: 0 0px;
+    padding: 0 0px;
+    color: #a3a19e ;
+  }
+  .col-lg-3, .col-lg-9 {
+      margin-top: 10px;
+  }
+.info{
+    background-color: #f7fafa;
+    border-radius: 10px;
+    color: #616161;
+}
+.profile_image{
+    height: 4.5rem;
+    width: 4.5rem;
+    border-radius: 50%;
+    margin-top: 15px;
+}
+
+p{
+    font-size: 12px;
+    margin-bottom: 1px;
+    font-weight: 350;
+}
+.paragraph_div{
+    padding: 20px 0px 10px 0px;
+}
+.first_col{
+    margin-bottom: 10px;
+    background-color: #f7fafa;
+    border-radius: 10px;
+    padding: 10px 0 10px 0;
+}
+table{
+    width: 100%;
+}
+tr,td{
+    text-align: center;
+    width: 50%;
+}
+th{
+    color: #b6b1ac;
+    font-weight: 50;
+    font-size: 12px;
+}
+td{
+    color: #646363;
+    font-size: 13px;
+}
+
+.button_div{
+    float: right;
+    display: flex; 
+    margin-left: 490px; 
+}
+.col-9-table-main{
+    align-items: center;
+    justify-content: center;
+    color: #8f8888;
+}
+.booking_para{
+    margin-left: 10px;
+    font-weight: normal;
+}
+.button_div button{
+    border-radius: 10px;
+    margin-left: 10px;
+    font-size: 12px;
+
+}
+.discription_box{
+    background-color: #f7fafa;
+    height: 50px;
+}
+.discription_table_box{
+    border: 0.1px solid #e2dfdf;
+    height: 500px;
+    width:  100%;
+}
+.dis_para{
+    color: #a7a3a3;
+    margin-left: 40px;
+    word-spacing: 3px;
+    display: none;
+}
+.para{
+    margin-top: 10px;
+}
+.disrow{
+    height: 40px;
+    margin: 5px 10px 0 5px;
+    background-color: #f7fafa;
+    border-radius: 10px;
+    
+}
+.disrow1{
+    height: 60px;
+    margin: 5px 10px 0 5px;
+}
+.delete_Edit{
+    position: absolute;
+    right: 20px;
+    margin: 15px;
+    display: none;
+}
+.delete_edit, .delete_icon{
+   font-size: 15px;
+   color: #616161;
+}
+.disrow1:hover{
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
+    background-color: #FFF;
+    transition-duration: 0.2s;
+}
+.disrow1:hover .dis_para{
+    display: block;
+    z-index: 3; 
+}
+.disrow1:hover .delete_Edit{
+    display: block;
+    z-index: 3; 
+}
+
+
+
+
+
+
+
+
