@@ -1,0 +1,204 @@
+
+.tab_inner_box{
+  margin: 0px 10px 0px 10px ;
+}
+.main_tab {
+  text-align: center;
+  list-style: none;
+  line-height: 40px;
+  height: 40px;
+  overflow: hidden;
+  width: 200px;
+  font-size: 13px;
+  position: relative;
+  display: inline-block;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 25px;
+  box-shadow: 0 0px 5px 0px rgba(155, 152, 152, 0.2);
+  border-bottom: #FFF;
+  margin-top: 5px;
+  z-index: 3;
+}
+  
+.main_tab li {
+  background: #FFF;
+  text-shadow: 0 1px #FFF;
+  margin: 0 0px;
+  padding: 0 0px;
+  color: #474747 ;
+}
+
+.mat-card{
+  width: 100%;
+  height: 155px;
+
+}
+.Buttons{
+  margin: 10px;
+  align-items: flex-start;
+}
+.Buttons button{
+  margin-right: 13px ;
+  width: 10%;
+  height: 35px;
+  border-radius: 10px;
+  color: #3C4043;
+}
+
+table {
+  width: 100%;
+}
+tr:nth-child(even) {
+  background-color: #F9FAFE;
+}
+/* 
+table{
+  width: 100%;
+}
+tr:nth-child(odd) {
+  background-color: #F9FAFE;
+}
+.tableRow th{
+  border-radius: 5px;
+  height: 40px;
+  font-size: 12px;
+  background-color: #F9FAFE;
+  color: #989EA7;
+  font-weight: normal;
+  width:10%;
+  text-align: start;
+}
+ td{
+  color: #3C4043 ;
+  height: 50px;
+  text-align: start;
+  font-size: 13px;
+
+}
+td .tr-image{
+width: 42px;
+height: 41px;
+background-color: #4D8BAB;
+border-radius: 50%;
+opacity: 1;
+
+}
+
+td button{
+  width: 149px;
+  border-radius: 15px;
+  height: 35px;
+}
+
+td .star{
+  color: gold;
+  font-size: 15px;
+}
+td .check{
+  color: green;
+  font-size: 15px;
+} */
+
+.status-btn{
+  width: 149px;
+  height: 35px;
+  border-radius: 15px;
+}
+
+.progress-bar-status{
+  text-align: center;
+  padding: 10px 20px 10px 20px;
+  color: #5F6368;
+}
+
+.mat-card .row .col-lg-6 p{
+  color: #5F6368;
+  font-size: 12px;
+}
+.mat-card .row {
+  margin: 12px;
+}
+
+.mat-card .row .col-lg-6 .check-outs{
+  margin-top: 10px;
+}
+
+.mat-card div{
+  color: #5F6368;
+  font-size: 12px;
+}
+/* .mat-select-panel{
+  background: red;
+} */
+.mat-form-field {
+  width: 150px;
+  height: 35px;
+  border-radius: 10px;
+  background-color: blueviolet;
+}
+
+
+/*  tabs  */
+
+::ng-deep.mat-tab-label, ::ng-deep.mat-tab-label-active{
+  min-width: 0!important;
+  padding: 10px!important;
+  margin: 10px!important;
+  font-size: 12px!important;
+}
+/* .infoTable{
+  width: 250px;
+  text-align: center;
+  margin-left:auto; 
+  margin-right:auto;
+}
+.infoTable tr{
+  height: 21px!important;
+}
+.infoTable tr th{
+  width: 50%; 
+  text-align: start;
+}
+.infoTable tr td{
+  width: 50%;
+  text-align: start;
+} */
+
+
+/* scrollbar */
+.scrollbar::-webkit-scrollbar {
+  background-color:#fff;
+  width:16px
+}
+
+/* background of the scrollbar except button or resizer */
+.scrollbar::-webkit-scrollbar-track {
+  background-color:#fff
+}
+.scrollbar::-webkit-scrollbar-track:hover {
+  background-color:#f4f4f4
+}
+
+/* scrollbar itself */
+.scrollbar::-webkit-scrollbar-thumb {
+  background-color:#babac0;
+  border-radius:16px;
+  border:5px solid #fff
+}
+.scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color:#a0a0a5;
+  border:4px solid #f4f4f4
+}
+
+/* set button(top and bottom of the scrollbar) */
+.scrollbar::-webkit-scrollbar-button {display:none}
+
+
+/* div box */
+body{background-color:#babac0}
+.scrollbar {
+  height: 75vh;
+  background: #fff;
+  overflow-y: scroll}
+.overflow{min-height: 100vh}
+

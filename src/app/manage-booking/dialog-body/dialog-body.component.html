@@ -1,0 +1,12 @@
+
+<h1 mat-dialog-title>Hi</h1>
+  <div mat-dialog-content>
+    <p>quantity is {{data.quantity}}</p>
+    <mat-form-field>
+      <mat-label>Change Quantity</mat-label>
+      <input type='number' min="1" matInput placeholder="data.quantity" [(ngModel)]=data.quantity >
+    </mat-form-field>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button [mat-dialog-close]=data.quantity cdkFocusInitial>Ok</button>
+  </div>

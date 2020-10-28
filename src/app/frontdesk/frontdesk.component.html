@@ -1,0 +1,229 @@
+<div class="main_tab">
+    <li>Reception <mat-icon style="font-size: 20px;position: absolute;right: 3px;margin: 8px;">close</mat-icon>
+    </li>
+</div>
+<div class="row cardRow">
+  <div class="col-md-3 ">
+    <mat-card>
+      <div class="row">
+         <div class="col-lg-6">
+           <div class="check-outs">
+             <p>Check-Ins Left</p>
+            <p>Rooms: 16</p>
+            <p>Day Out: 185</p>
+           </div>
+         </div>
+         <div class="col-lg-6" style="text-align: center;">
+          <div class="d-flex justify-content-center"  >
+            <mat-progress-spinner  color="primary" 
+                                mode="determinate" 
+                                value="56"
+                                aria-label="Rating">
+            </mat-progress-spinner>
+            <div style="position:absolute;margin-top: 40px;"><b>999</b>/999</div>
+        </div>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+  <div class="col-md-3">
+    <mat-card>
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="check-outs">
+            <p>Check-Outs Left</p>
+            <p>Rooms: 16</p>
+            <p>Day Out: 185</p>
+          </div>
+
+        </div>
+        <div class="col-lg-6">
+          <div class="d-flex justify-content-center"  >
+            <mat-progress-spinner  color="warn" 
+                                mode="determinate" 
+                                value="80"
+                                aria-label="Rating">
+            </mat-progress-spinner>
+            <div style="position:absolute;margin-top: 40px;"><b>999</b>/999</div>
+        </div>
+       </div>
+     </div>
+    </mat-card>
+  </div>
+  <div class="col-md-3">
+    <mat-card style="text-align: center;">
+   
+      <p>Payment Status</p>
+      <div>
+        <table class="table" style="width: 90%;margin: auto auto auto auto;color: #5F6368;">
+          <tr style="background-color: white;text-align: center;">
+            <td style="border-right: 1px solid #DADCE0;border-top: none;">
+              <p>Paid: 11</p>
+              <p>Amount: &#8377;445500</p>
+            </td>
+            <td style="text-align: center;border-top: none;">
+              <p>Unpaid: 11</p>
+              <p>Amount: &#8377;445500</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </mat-card>
+  </div>
+  <div class="col-md-3">
+    <mat-card style="text-align: center;">
+      <p>Availability Status</p>
+      <div class="progress-bar-status">
+        <mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
+        <p>Day-Out 325/400</p>
+        <mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
+        <p>Rooms: 15/20</p>
+      </div>
+      
+    </mat-card>
+  </div>
+</div>
+<section>
+  <div class="Buttons">
+    <button mat-stroked-button >All</button>
+    <button mat-stroked-button >Arrival's</button>
+    <button mat-stroked-button >In House</button>
+    <button mat-stroked-button >Check-Outs</button>
+    <button mat-stroked-button >No-Show/Cancel</button>
+  </div>
+</section>
+<section>
+  <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+    <!-- Position Column -->
+    <ng-container matColumnDef="position">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Customer Name  </th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Company Name </th>
+      <td mat-cell *matCellDef="let element">{{element.companyName}} </td>
+    </ng-container>
+    <ng-container matColumnDef="companyName">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Company Name </th>
+      <td mat-cell *matCellDef="let element">{{element.companyName}} </td>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="tax">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Pax </th>
+      <td mat-cell *matCellDef="let element"> {{element.tax}} </td>
+    </ng-container>
+  
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="check_in_time">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Check-in Time & Date </th>
+      <td mat-cell *matCellDef="let element"> {{element.check_in_time}} </td>
+    </ng-container>
+    <ng-container matColumnDef="Check_out_date">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Check-out Time & Date </th>
+      <td mat-cell *matCellDef="let element"> {{element.Check_out_date}} </td>
+    </ng-container>
+    <ng-container matColumnDef="paymentDue">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Payment Due </th>
+      <td mat-cell *matCellDef="let element"> {{element.paymentDue}} </td>
+    </ng-container>
+    <ng-container matColumnDef="bookingSource">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Booking Source </th>
+      <td mat-cell *matCellDef="let element">{{element.bookingSource}} </td>
+    </ng-container>
+    <ng-container matColumnDef="">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Status </th>
+      <td mat-cell *matCellDef="let element"> <button mat-stroked-button  ng-style="{color: 'green'}"  appearance="outline">
+        <mat-select  placeholder="Select">
+          <mat-option value="option">Checked_out</mat-option>
+          <mat-option value="option">Checked_in</mat-option>
+        </mat-select>
+      </button> </td>
+    </ng-container>
+    <!-- <ng-container matColumnDef="actions">
+      <mat-header-cell > Actions </mat-header-cell>
+      <mat-cell *matCellDef="let row" >
+        <button mat-stroked-button  ng-style="{color: 'green'}"  appearance="outline">
+          <mat-select  placeholder="Select">
+            <mat-option value="option">Checked_out</mat-option>
+            <mat-option value="option">Checked_in</mat-option>
+          </mat-select>
+        </button>
+      </mat-cell>
+    </ng-container> -->
+
+    <!-- <ng-container matColumnDef="actions">
+      <mat-header-cell > Actions </mat-header-cell>
+      <mat-cell *matCellDef="let row" >
+        <button [matMenuTriggerFor]="menu" style="width: 40px;border:none;background-color: transparent;"><mat-icon>more_vert</mat-icon></button>
+        <mat-menu #menu="matMenu">
+          <button (click)="Route($event,customer.id)" mat-menu-item>Manage Booking</button>
+          <button mat-menu-item>Item 2</button>
+        </mat-menu>
+      </mat-cell>
+    </ng-container> -->
+    <ng-container >
+      <th > </th>
+      <td  >
+        <button [matMenuTriggerFor]="menu" style="width: 40px;border:none;background-color: transparent;"><mat-icon>more_vert</mat-icon></button>
+        <mat-menu #menu="matMenu">
+          <button (click)="Route($event,customer.id)" mat-menu-item>Manage Booking</button>
+          <button mat-menu-item>Item 2</button>
+        </mat-menu>
+      </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  
+  <!-- <table>
+    <tr class="tableRow">
+      <th style="width: 5px;"></th>
+      <th (click)="sortList()" style="width: 15%;text-align: center;cursor: pointer;text-align: start;">Customer Name 
+        <mat-icon style="vertical-align: middle;">expand_less</mat-icon>
+      </th>
+      <th (click)="sortList()" >Company Name</th>
+      <th >Tax</th>
+      <th >Check-in Time & Date</th>
+      <th >Check-out Time & Date</th>
+      <th >Payment Due</th> 
+      <th >Booking Source</th>
+      <th >Status</th>
+      <th></th>
+    </tr>
+
+    <tr *ngFor="let customer of Customers" >
+      <td><img style="position: relative;"  class="tr-image" src="" alt=""></td>
+      <td style="text-align: center;vertical-align: middle;text-align: start;"> <span >{{customer.name}}
+        <mat-icon class="star">grade</mat-icon><mat-icon class="check">check_circle</mat-icon>
+      </span></td>
+      <td>{{customer.companyName}}</td>
+      <td>{{customer.tax}}</td>
+      <td>{{customer.check_in_time}}</td>
+      <td>{{customer.Check_out_date}}</td>
+      <td>{{customer.paymentDue}}</td>
+      <td>{{customer.bookingSource}}</td>
+      <td><button mat-stroked-button  ng-style="{color: 'green'}"  appearance="outline">
+        <mat-select  placeholder="Select">
+          <mat-option value="option">Checked_out</mat-option>
+          <mat-option value="option">Checked_in</mat-option>
+        </mat-select>
+      </button></td>
+      <td style="text-align: end;"><button [matMenuTriggerFor]="menu" style="width: 40px;border:none;background-color: transparent;"><mat-icon>more_vert</mat-icon></button>
+        <mat-menu #menu="matMenu">
+          <button (click)="Route($event,customer.id)" mat-menu-item>Manage Booking</button>
+          <button mat-menu-item>Item 2</button>
+        </mat-menu>
+      </td>
+    </tr>
+
+
+  </table> -->
+</section>

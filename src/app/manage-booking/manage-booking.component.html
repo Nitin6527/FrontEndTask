@@ -1,0 +1,349 @@
+    <div class="main_tab">
+      <li>Anand R <mat-icon style="font-size: 20px;position: absolute;right: 3px;margin: 8px;">close</mat-icon>
+      </li>
+    </div>
+    <div class="tab_box">
+      <div class="tab_inner_box">
+        <div class="row row_main">
+          <div class="col-lg-3">
+            <div class="info">
+              <mat-icon  (click)="starToggle()" [ngStyle]="{'color':this.color }" style="color: gold;cursor: pointer;position: absolute;left:30px;top:20px;font-size: 18px;">grade</mat-icon>
+              <mat-icon (click)="checkToggle()" [ngStyle]="{'color':this.colorCheck }" style="position: absolute;cursor: pointer;right: 10px;top:20px;font-size: 18px;">check_circle</mat-icon>
+              <div style="text-align: center;">
+                <img class="profile_image" style="background-color: #6d6c6c;"  [src]="imageURL" [alt]="uploadForm.value.name" >
+                <div class="paragraph_div first_col">
+                  <p><b>Anand R</b></p>
+                  <p>anand.dx001@gmail.com</p>
+                  <p>866 088 6780</p>
+                  <p>Northern Trust</p>
+                </div>
+              </div>
+            </div>
+            <div class="Check_in_out first_col">
+              <table class="infoTable">
+                <tr>
+                  <th>check-in</th>
+                  <th>check-out</th>
+                </tr>
+                <tr>
+                  <td>11:30 AM</td>
+                  <td>11:30 AM</td>
+                </tr>
+              </table>
+            </div>
+            <div class="cost first_col">
+              <table class="infoTable" >
+                <tr>
+                  <th>Final Cost</th>
+                  <th>Balance Due</th>
+                </tr>
+                <tr>
+                  <td>&#8377; 7700</td>
+                  <td>&#8377; 7700</td>
+                </tr>
+              </table>
+            </div>
+            <div class="rest first_col">
+              <table class="infoTable">
+                <tr class="rest_Table">
+                  <th>Day-Outing</th>
+                  <td>0 Adult 0 kids</td>
+                </tr>
+                <tr class="rest_Table">
+                  <th>Stay</th>
+                  <td>0 Adult 0 Kids <br>0 Rooms</td>
+                </tr>
+                <tr class="rest_Table">
+                  <th> Orders/Coupons</th>
+                  <td> 9</td>
+                </tr>
+                <tr class="rest_Table">
+                  <th> Event Venue</th>
+                  <td> 2</td>
+                </tr>
+              </table>
+            </div>
+            <div class="tds first_col">
+              <table class="infoTable">
+                <tr class="rest_Table">
+                  <th>TDS Deduction</th>
+                  <td>2%</td>
+                </tr>
+                <tr class="rest_Table">
+                  <th>Discount Applied</th>
+                  <td>3%</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <div class="col-lg-9">
+            <div class="row col-9-table-main">
+              <div class="col-lg-2">
+                <p class="booking_para">BookingID: <b style="font-weight:500;">HSFXL89</b></p>
+              </div>
+              <div class="col-lg-2">
+                <p class="booking_para">Source: <b style="font-weight:500;">Tripaxy</b></p>
+              </div>
+              <div class="col-lg-8">
+                <div class="button_div">
+                  <button mat-raised-button style="width: 140px;">Make Payment</button>
+                  <button mat-raised-button style="width: 106px;" color="primary">Add Order</button>
+                  <button mat-stroked-button color="primary"  appearance="outline" style="width: 149px;">
+                    <mat-select placeholder="Select">
+                      <mat-option value="option">Checked_in_out</mat-option>
+                      <mat-option value="option">Checked_in</mat-option>
+                    </mat-select>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <mat-tab-group >
+              <div class="box"  >
+                <!-- orders & reservatons tab -->
+                <mat-tab label="Orders & Reservations" >
+                    <div class="row disrow">
+                      <div class="col-lg-6">
+                        <p class="para" style="margin-left: 50px;"> Description</p>
+                      </div>
+                      <div class="col-lg-2">
+                        <p class="para" style="position: absolute;right: 0;">Quantity</p>
+                      </div>
+                      <div class="col-lg-2">
+                        <p class="para" style="position: absolute;right:0;">Total</p>
+                      </div>
+                      <div class="col-lg-2">
+                      </div>
+                    </div>
+                    <div class="scrollbar" style="overflow-y:scroll; height:380px;" >
+                      <div  *ngFor="let order of Orders let i = index" [attr.data-index]="i"   >
+                        <div class="row disrow1" *ngIf="!order.id !==undefined" (click)="display($event,i)" [ngStyle]="{'height.px':this.rowSize}" >
+                          <div class="col-lg-6" >
+                            <p class="para" style="margin-left: 40px;">
+                              <mat-icon class="OrderIcons" style="color:#6d6c6c;font-size:21px;">home</mat-icon>
+                               {{order.description}}
+                              <span *ngIf="order.show">
+                                <p   class="dis_para">{{order.paragraph}}</p>
+                              </span>
+                            </p>
+                          </div>
+                          <div class="col-lg-2">
+                            <p class="para" style="position: absolute;right: 0;">{{order.quantity}}</p>
+                          </div>
+                          <div class="col-lg-2">
+                            <p class="para" style="position: absolute;right:0;">&#8377; {{order.total}}</p>
+                          </div>
+                          <div class="col-lg-2">
+                            <p class="delete_Edit">
+                              <mat-icon class="delete_edit" (click)="openDialog($event,order.quantity,i)">edit</mat-icon>
+                              <mat-icon (click)="delete($event,order.id,i)" class="delete_icon">delete</mat-icon>
+                            </p>
+                          </div>
+                        </div>
+    
+                      </div>
+  
+                    </div>
+                    
+                    
+                    <!-- <div class="row disrow1" *ngIf="this.deleteRow" style="background-color: #F9FAFE;">
+                      <div class="col-lg-6">
+                        <p class="para" style="margin-left: 40px;">
+                          <mat-icon class="OrderIcons" style="color: #6d6c6c;font-size:21px;">view_quilt</mat-icon> Adventure Game Coupon
+                        </p>
+                      </div>
+                      <div class="col-lg-2">
+                        <p class="para" style="position: absolute;right: 0;">22</p>
+                      </div>
+                      <div class="col-lg-2">
+                        <p class="para" style="position: absolute;right:0;">&#8377; 520.00</p>
+                      </div>
+                      <div class="col-lg-2">
+                        <p class="delete_Edit">
+                          <mat-icon class="delete_edit">edit</mat-icon>
+                          <mat-icon (click)="delete()" class="delete_icon">delete</mat-icon>
+                        </p>
+                      </div>
+                    </div>
+                    <div class="row disrow1" *ngIf="this.deleteRow">
+                      <div class="col-lg-6">
+                        <p class="para" style="margin-left: 40px;">
+                          <mat-icon class="OrdersIcons" style="color: #6d6c6c;font-size:21px;">filter_hdr</mat-icon> Golden Mango Package
+                        </p>
+                      </div>
+                      <div class="col-lg-2">
+                        <p class="para" style="position: absolute;right: 0;">12</p>
+                      </div>
+                      <div class="col-lg-2">
+                        <p class="para" style="position: absolute;right:0;">&#8377; 520.00</p>
+                      </div>
+                      <div class="col-lg-2">
+                        <p class="delete_Edit">
+                          <mat-icon class="delete_edit">edit</mat-icon>
+                          <mat-icon (click)="delete()" class="delete_icon">delete</mat-icon>
+                        </p>
+                      </div>
+                    </div> -->
+                  
+                </mat-tab>
+                <!-- orders & reservatons tab close -->
+  
+                <!------ Customer Info  -------->
+                <mat-tab  label="Customer Info">
+                  <div class="row" style="margin: 5px 10px 5px 10px;">
+                    <div class="col-lg-8">
+                      <p>
+                        <mat-form-field appearance="outline">
+                          <mat-label>First Name</mat-label>
+                          <input matInput placeholder="Placeholder">
+                        </mat-form-field>
+                        <mat-form-field appearance="outline">
+                          <mat-label>Last Name</mat-label>
+                          <input matInput placeholder="Placeholder">
+                        </mat-form-field>
+                      </p>
+                      <p>
+                        <mat-form-field appearance="outline">
+                          <mat-label>Email ID</mat-label>
+                          <input matInput placeholder="Placeholder">
+                        </mat-form-field>
+                        <mat-form-field appearance="outline">
+                          <mat-label>Phone Number</mat-label>
+                          <input matInput placeholder="Placeholder">
+                        </mat-form-field>
+                      </p>
+                      <p>
+                        <mat-form-field  appearance="outline">
+                          <mat-label>Reception</mat-label>
+                          <mat-select>
+                            <mat-option value="option">Walk in</mat-option>
+                            <mat-option value="option">E-mail</mat-option>
+                          </mat-select>
+                        </mat-form-field>
+                      </p>
+                    </div>
+                    <div class="col-lg-4 rectangle-div">
+                      <div class="rectangle">
+                        <div class="imagePreview" *ngIf="imageURL && imageURL !== ''">
+                          <img style="width: 235px;height: 190px;border-radius: 10px;" [src]="imageURL" [alt]="uploadForm.value.name">
+                        </div>
+                        <form class="image-input" [formGroup]="uploadForm" *ngIf="!this.imageURL">
+                          <input class="image-input" type="file" accept="image/*" (change)="showPreview($event)" />                 
+                        </form>
+                        <mat-icon class="delete-image" *ngIf="this.imageURL" (click)="this.imageURL=''" >delete</mat-icon>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row" style="margin: 5px 10px 5px 10px;">
+                    <div class="col-lg-8">
+                      <mat-slide-toggle style="margin: 10px 0px 10px 20px;" (click)="displayBooking()" color="primary">Corporate Booking?</mat-slide-toggle>
+                      <div *ngIf="showBooking" style="padding: 10px 0 10px 0;">
+                        <p>
+                          <mat-form-field appearance="outline">
+                            <mat-label>Billing Name</mat-label>
+                            <input matInput placeholder="Placeholder">
+                          </mat-form-field>
+                        </p>
+                        <p>
+                          <mat-form-field appearance="outline">
+                            <mat-label>Company Name</mat-label>
+                            <input matInput placeholder="Placeholder">
+                          </mat-form-field>
+                          <mat-form-field appearance="outline">
+                            <mat-label>Company GSTIN</mat-label>
+                            <input matInput placeholder="Placeholder">
+                          </mat-form-field>
+                        </p>
+                        <p>
+                          <mat-form-field style="width: 620px;" appearance="outline">
+                            <mat-label>Company Address</mat-label>
+                            <input matInput placeholder="Placeholder">
+                          </mat-form-field>
+                        </p>
+                        <section class="example-section" style="margin-left: 20px;">
+                          <mat-checkbox class="example-margin" color="primary">Tex Deduction at Source(TDS)</mat-checkbox>
+                        </section>
+                      </div>
+                    </div>
+                    <div class="col-lg-4"></div>
+                  </div>
+                </mat-tab>
+                <!------ Customer Info close ------>
+                <mat-tab label="Group">
+                  Group
+                </mat-tab>
+                <!------ Payments Tab ------>
+                <mat-tab label="Payments">
+                  <div class="row" style="margin: 10px 10px 10px 0px;">
+                    <div class="col-lg-6" style="margin-top: 10px 0 10px 0;background-color: #F9FAFE;border-radius: 10px;">
+                      <table style="width: 100%;height:88px;margin: 5px 5px 5px 5px;">
+                        <tr class="tableRow" style="height:19px;border-bottom: 0.1px dashed #DADCE0;opacity:1;">
+                          <th style="text-align: start;">Final Cost</th>
+                          <td style="text-align: right;">&#8377; 7700</td>
+                        </tr>
+                        <tr class="tableRow" style="height: 19px;">
+                          <th style="text-align: start;">Balance Due</th>
+                          <td style="text-align: right;">&#8377; 7700</td>
+                        </tr>
+                      </table>
+                    </div>
+                    <div class="col-lg-6" style="text-align: right;">
+                      <button style="border-radius: 10px;font-size: 12px;" mat-stroked-button color="primary">Add Discount</button>
+                    </div>
+                  </div>
+                  <div style="margin: 5px 5px 5px 5px;">
+                    <table style="width: 100%;margin: 5px 0 5px 0;">
+                      <tr class="tableRow" style="height:55px;text-align: start;height: 40px;margin: 5px 5px 5px 5px;border-radius: 10px;background-color: #F9FAFE;">
+                        <th>Date</th>
+                        <th>Payment Mode</th>
+                        <th>Reference Number</th>
+                        <th>Amount</th>
+                      </tr>
+                      <tr class="tableRow">
+                        <td>11 August 2020</td>
+                        <td>Cheque</td>
+                        <td>B54746</td>
+                        <td>&#8377; 5200.00</td>
+                      </tr>
+                    </table>
+                  </div>
+                </mat-tab>
+  
+                <!------ Payments Tab close ------>
+                <!------  Itinerary tab------>
+                <mat-tab label="Itinerary">
+                  Itinerary
+                </mat-tab>
+                 <!------  Itinerary close------>
+                 <!------  chat tab ------>
+                <mat-tab label="Chats">
+                  Chats
+                </mat-tab>
+                <!------  Chat tab close------>
+  
+                <!------ Activity Log Tab ------>
+                <mat-tab label="Activity Log">
+                  <div style="margin: 5px 10px 5px 10px;">
+                    <table style="width: 100%;margin: 5px 0 5px 0;">
+                      <tr class="tableRow" style="text-align: start;height: 40px;margin: 5px 5px 5px 5px;border-radius: 10px;background-color: #F9FAFE;">
+                        <th style="width: 15%;margin-left: 10px;">Date</th>
+                        <th style="width: 15%;">Time</th>
+                        <th style="width: 15%;">User</th>
+                        <th style="width: 55%;">Log</th>
+                      </tr>
+                      <tr class="tableRow" *ngFor="let user of users">
+                        <td>{{user.Date}}</td>
+                        <td>{{user.time}}</td>
+                        <td>{{user.user}}</td>
+                        <td>{{user.log}}</td>
+                      </tr>
+                    </table>
+                  </div>
+                </mat-tab>
+                <!------ Activity Log Tab close------>
+              </div>
+            </mat-tab-group>
+          </div>
+        </div>
+      </div>
+    </div>
+
